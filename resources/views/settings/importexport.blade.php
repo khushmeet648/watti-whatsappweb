@@ -48,13 +48,13 @@
                 <div class="btn btn-outline-secondary d-flex justify-content-center" id="border1">
                     <div class="row">
                       
-                            <label> Upload the chat backup(zip) here</label>
-                            <div width="200" height="200">
-                            <i class="fas fa-upload"  aria-hidden="true"></i>
-                            </div>
+                                <h5 class="text-dark"> Upload the chat backup(zip) here</h5>
+                                <div width="200" height="200">
+                                <img src="https://t4.ftcdn.net/jpg/01/64/16/59/360_F_164165971_ELxPPwdwHYEhg4vZ3F4Ej7OmZVzqq4Ov.jpg" alt="">
+                                </div>
 
                             <div>
-                            <p>Drag & Drop files here</p>
+                            <h6>Drag & Drop files here</h6>
                             <p>or</p>
                             <a href="" class="btn btn-success">Browse files</a>
                             </div>

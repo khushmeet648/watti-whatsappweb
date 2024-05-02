@@ -100,23 +100,58 @@
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                         </div>
+
+
                         <div class="modal-body">        
                         <p>Choose attributes to filter</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Message Recieved</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">New Contact Message</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id=""> Session Message Sent</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Template Message Sent</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is DELIVERED</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is READ</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is REPLIED</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Template Message Sent v2</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is DELIVERED v2</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is READ v2</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Sent Message is REPLIED v2</p>
-                        <p><input class="form-check-input" type="checkbox" value="" id="">Payment Captured</p>
 
-                        
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Message Recieved</p>
                         </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Session Message Sent</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Template Message Sent</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is DELIVERED</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is READ</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is REPLIED</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Template Message Sent v2</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is DELIVERED v2</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is READ v2</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Sent Message is REPLIED v2</p>
+                        </div>
+
+                        <div><input class="form-check-input ms-3 " type="checkbox" value="" id="">
+                        <p class="ms-5" >Payment Captured</p>
+                        </div>
+
+                        </div>
+
                         <div class="modal-footer align-items-center">
                                 <button type="button" class="btn btn-success">Save</button>
                         </div>
