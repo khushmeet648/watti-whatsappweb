@@ -1,0 +1,12 @@
+.main-sidebar{
+    background-color: rgb(80, 87, 90);
+    margin-top: 55px;
+}
+
+a:hover {
+color: rgb(93, 175, 93) !important;
+}
+
+.main-header{
+    margin-left: 0px !important;
+}
