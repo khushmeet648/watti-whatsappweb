@@ -1,6 +1,7 @@
 .main-sidebar{
     background-color: rgb(80, 87, 90);
     margin-top: 55px;
+    height: 100%;
 }
 
 a:hover {

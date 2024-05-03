@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broadcast History</title>
-</head>
-
-<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <style> 
 		label{margin-left: 20px;} 
 		#datepicker{width:180px;} 
@@ -23,11 +21,6 @@
 			display:none;
 		}
 	</style> 
-    
-    <!-- @if(session('success'))
-	<h6 id="success-alert" class="alert alert-success d-flex justify-content-center" role="alert">{{session('success')}}</h6>
-    
-	@endif  -->
     <script>
     var msg = '{{Session::get('success')}}';
     var exist = '{{Session::has('success')}}';
@@ -36,6 +29,8 @@
     }
   </script>
 
+</head>
+    
 @include('layouts.header')
 @include('layouts.broadcastsidebar')
    
@@ -243,10 +238,10 @@
                </div>
                
                <div class="d-flex justify-content-center mt-5">
-               <button class="btn btn-success"> Add Broadcast</button>
+               <button class="btn btn-success mb-4"> Add Broadcast</button>
                </div>               
               
-        </div>
+</div>
 
            
           
@@ -394,7 +389,7 @@
                         </div>
                         </div>
                         </div>
-                        </div>
+        </div>
         </form>
         <!-- Modal -->
         
