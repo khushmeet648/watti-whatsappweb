@@ -31,7 +31,7 @@
                 <div class="row my-4">
                     <div class="col">
                     <label> Send report schedule:</label>
-                   <button class="btn btn-success" data-toggle="modal"  data-target="#schedule"> Create Schedule</button>
+                   <a class="btn btn-success" data-toggle="modal"  data-target="#schedule"> Create Schedule</a>
                     </div>
                 </div>
 
@@ -136,12 +136,14 @@
  <div class="modal fade" id="schedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
+
                         <div class="modal-header">
                                 <h6 class="modal-title" id="broadcasttitle"><b>Create schedule</b></h6>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                         </div>
+
                         <div class="modal-body me-2">    
 
                         <label>Repeat every</label>
@@ -158,12 +160,14 @@
                         <p >Separate multiple email addresses with comma (,)</p>
                           
                         </div>
+
                         <div class="modal-footer">
                                 <button type="button" class="btn btn-success">Save</button>
                         </div>
+
                         </div>
                         </div>
-                        </div>
+</div>
         <!-- Modal -->  
        
 
