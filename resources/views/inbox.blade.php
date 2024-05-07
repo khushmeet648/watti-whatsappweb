@@ -7,9 +7,8 @@
 </head>
 @include('layouts.header')
 
-<body class="sidebar-collapse">
-<form action="{{route('inbox')}}"></form>
-
+<body class="sidebar-collapse"> 
+<form action="{{route('inbox')}}">
 <div class="wrapper">
 
   <div class="content-wrapper">

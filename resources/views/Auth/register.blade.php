@@ -38,8 +38,17 @@
             <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="email">
+                <input type="hidden"  name="type" value="2" >
             </div>
         
+            <div class="mb-3">
+            <label class="form-label">Type</label>
+            <select class="form-control" name="type">
+             <option value="1">Admin</option>
+             <option value="2">User</option>
+             </select>
+             </div>
+             
             <div class="mb-3">
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="password">
