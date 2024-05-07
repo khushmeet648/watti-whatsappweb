@@ -12,6 +12,6 @@ class TemplateMessage extends Model
     protected $table= "templatemessage";
  
    
-    protected $fillable = ['Name','Category','Language','BroadcastTitle','Body','Footer','Buttons'];
+    protected $fillable = ['Name','Category','Language','BroadcastTitle','LastUpdate','Body','Footer','Buttons'];
 
 }

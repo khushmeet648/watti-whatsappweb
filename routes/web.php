@@ -32,6 +32,7 @@ Route::get('/scheduledbroadcast', [BroadcastController::class,'schedule'])->name
 Route::post('/scheduledbroadcast', [BroadcastController::class,'historypost'])->name('historypost');
 Route::get('/templatemessages', [BroadcastController::class,'template'])->name('templatemessages');
 Route::post('/templatemessages', [BroadcastController::class,'templatepost'])->name('template.post');
+Route::get('delete/{Name}', [BroadcastController::class,'destroy'])->name('destroy');
 
 // ChatBots
 Route::get('/chatbotflows', [ChatbotsController::class,'flows'])->name('chatbotflows');

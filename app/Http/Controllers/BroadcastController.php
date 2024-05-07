@@ -38,15 +38,19 @@ class BroadcastController extends Controller
     
     
     public function template(){
-        return view("Broadcast.templatemessages");
+        $data = TemplateMessage :: select('Name','Category','Language','LastUpdate')->get();
+        return view('Broadcast.templatemessages',['message'=> $data]);
+        // this message pass in foreach loop with $
+       
     }
 
     public function templatepost(Request $request){
+        
         $request->validate([
             'name' => 'required',
             'category' => 'required',
             'language' => 'required',
-            'title' => 'required',            
+            'title' => 'required',        
             'body' => 'required',
             'footer' => 'required',
             'button' => 'required',
@@ -58,13 +62,28 @@ class BroadcastController extends Controller
         $data1['Category'] = $request->category;
         $data1['Language'] = $request->language;
         $data1['BroadcastTitle'] = $request->title;
+        $data1['LastUpdate'] = now()->format('Y-m-d');
         $data1['Body'] = $request->body;
         $data1['Footer'] = $request->footer;
         $data1['Buttons'] = $request->button;
-    
+   
    
        $template = TemplateMessage::create($data1);
      
     return redirect()->back()->with('success', "successfully inserted");
+    
     }
+
+    public function destroy($Name){
+        $data = TemplateMessage::where('Name', $Name)->first();
+
+        if($data){
+            $data->delete();
+            return redirect()->back()->with('success', 'Template deleted successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Data not found.');
+        }
+      
+    }
+    
 }

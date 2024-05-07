@@ -31,14 +31,19 @@
 
         <div class="tab-pane fade" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-document-tab">
                       <div class="float-right mt-4">
-                        <a href="" class="btn btn-outline-success">Add</a>
+                        <a href=""  data-toggle="modal"  data-target="#user" class="btn btn-outline-success">Add</a>
                     </div>  
                     <div class="row mt-4">
                         <div class="col-3 ">
                                 <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title text-green">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="float-right">
+                                    <a href="" data-toggle="modal"  data-target="#user" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
+                                    <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                                    </div>
+                                    <h5 class="card-title text-green">Assign to Bot</h5>
+                                    <p class="card-text mt-5">Assign to User <b>Bot</b></p>
+                                    
                                     
                                 </div>
                                 </div>
@@ -49,15 +54,20 @@
 
         <div class="tab-pane fade" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-image-tab">
                      <div class="float-right mt-4">
-                        <a href="" class="btn btn-outline-success">Add</a>
+                        <a href="" data-toggle="modal" data-target="#team" class="btn btn-outline-success"> Add</a>
                     </div>  
                      
                     <div class="row mt-4">
                         <div class="col-3 ">
                                 <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title text-green">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="float-right">
+                                    <a href="" data-toggle="modal"  data-target="#team" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
+                                    <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                                    </div>
+                                    <h5 class="card-title text-green">Route to 5iI6x</h5>
+                                    <p class="card-text mt-5"><i class="fas fa-user"></i> 5iI6x</p>
+                                    
                                     
                                 </div>
                                 </div>
@@ -79,6 +89,72 @@
   </div>
 <!-- ./wrapper -->
 </form> 
+
+<!-- Modal user -->
+<div class="modal fade" id="user" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                        <div class="modal-header">
+                                <h6 class="modal-title" id="filter1Title"><b>Assign to User Material</b></h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        
+                        <div class="modal-body">        
+                             <p>Material name</p>
+                             <input type="text" class="mb-2 form-control">
+
+                             <p>Selected user</p>
+                            <select name="" id="" class="form-control">
+                                <option value="Bot">Bot</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-success">Save</button>
+                        </div>
+
+                        </div>
+                        </div>
+            </div>
+
+<!-- Modal -->
+
+<!-- Modal team -->
+<div class="modal fade" id="team" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                        <div class="modal-header">
+                                <h6 class="modal-title" id="filter1Title"><b>New Routing Material</b></h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        
+                        <div class="modal-body">        
+                             <p>Material name</p>
+                             <input type="text" class="mb-2 form-control">
+
+                             <p>Selected Team</p>
+                            <select name="" id="" class="form-control">
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-success">Save</button>
+                        </div>
+
+                        </div>
+                        </div>
+            </div>
+
+<!-- Modal -->
 </body>
 @include('layouts.footer')
 

@@ -233,7 +233,20 @@
         <div class="tab-pane fade" id="v-pills-catalog" role="tabpanel" aria-labelledby="v-pills-catalog-tab">
              
             <div class="mt-5 col-8">
-            <p>All Sets created in Catalog gets displayed here. Checkout the <a href=""><i class="fa fa-play"></i> Video</a>to learn how to create Sets in Meta Catalog.<br> Note: Maximum of 30 items in a Set gets sent when a Set Catalog message is delivered to user.</p>
+            <p>All Sets created in Catalog gets displayed here. Checkout the <a href=""><i class="fa fa-play"></i> Video</a> to
+             learn how to create Sets in Meta Catalog.<br> Note: Maximum of 30 items in a Set gets sent when a Set Catalog message is delivered to user.</p>
+
+             <div class="mt-5 d-flex justify-content-center">
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSChE0cO2l-3y-SfaaMASaFZqKgHz3COnfU8A&usqp=CAU" alt=""><br>
+               </div> 
+
+               <div class="mt-3 d-flex justify-content-center">
+               <label><i>Catalog Empty</i></label>
+               </div> 
+               
+               <div class="mt-3 d-flex justify-content-center">
+               <p><i> View <a href="">Catalog setup page</a> to enable catalog with us.      </i></p>
+               </div>
             </div>  
 
         </div>

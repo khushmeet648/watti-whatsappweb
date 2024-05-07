@@ -12,15 +12,29 @@
       alert(msg);
     }
   </script>
+
+<script>
+    var msg = '{{Session::get('status')}}';
+    var exist = '{{Session::has('status')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
+
+<script>
+    var msg = '{{Session::get('error')}}';
+    var exist = '{{Session::has('error')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 @include('layouts.header')
 @include('layouts.broadcastsidebar')
 <body>
 
-<form action="{{route('templatemessages')}}">
+<form >
 <div class="wrapper">
-
 <div class="content-wrapper">
-
 <div class="content-header mt-3">   
             <div class="row">
                         <div class="col row">
@@ -70,22 +84,30 @@
                 
                </tr>
              </thead>
+             @if(!empty($message))
+             @foreach($message as $mes)
              <tr>
-                <td>shopify_default_cod_confirm_order_v6</td>
-                <td>Marketing</td>
-                <td></td>
-                <td>English (US)</td>
-                <td>12/8/2023</td>
+                <td>{{$mes['Name']}}</td>
+                <td>{{$mes['Category']}}</td>
+                <td>PENDING</td>
+                <td>{{$mes['Language']}}</td>
+                <td>{{$mes['LastUpdate']}}</td>
                 <td>
                 <a href="" class="btn btn-outline-secondary"><i class="fas fa-copy"></i></a>
-                <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
-
+                <a href="" data-toggle="modal"  data-target="#view" class="btn btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                <a href="{{url('delete/'.$mes['Name'])}}" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
                 </td>
                 
                </tr>
-             </table>
-         <!-- Modal filter1 -->
+               @endforeach
+               @else
+                <tr class="d-flex justify-content-end">
+                    <td >no records found</td>
+                </tr>
+               @endif
+</table>
+
+<!-- Modal filter1 -->
        <div class="modal fade" id="filter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -137,12 +159,179 @@
                         </div>
                         </div>
             </div>
-</form>
-        <!-- Modal --> 
+
+<!-- Modal --> 
  
+<!-- Modal view -->
+<form>
+   
+            <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                                <h6 class="modal-title" id="broadcasttitle"><b>View Template Message</b></h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                      
+                        <div class="modal-body me-2">                        
+                       
 
-            
+                            <div class="mt-1 col row">
+                                        <div class="col">
+                                        <p>Template Name</p>
+                                    <input type="text" class="form-control" placeholder="Template Name" name="name">
+                                        </div>
 
+                                        <div class="col">
+                                        <p>Category</p>
+                                        <select id="inputtype" class="form-control" name="category">
+                                        <option value="all" selected disabled>Category...</option>
+                                        <option value="Authentication">Authentication</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Utility">Utility</option>
+                                        </select>
+                                        </div>
+
+                                        <div class="col">
+                                        <p>Language</p>
+                                        <select   class="form-control" name="language">
+                                            <option value="AF">Afrikaans</option>
+                                            <option value="SQ">Albanian</option>
+                                            <option value="AR">Arabic</option>
+                                            <option value="HY">Armenian</option>
+                                            <option value="EU">Basque</option>
+                                            <option value="BN">Bengali</option>
+                                            <option value="BG">Bulgarian</option>
+                                            
+                                            <option value="NL">Dutch</option>
+                                            <option value="EN">English</option>
+                                            <option value="ET">Estonian</option>
+
+                                            <option value="HI">Hindi</option>
+                                            <option value="HU">Hungarian</option>
+                                            <option value="IS">Icelandic</option>
+                                            <option value="ID">Indonesian</option>
+                                            
+                                            <option value="JA">Japanese</option>
+                                            <option value="JW">Javanese</option>
+                                            <option value="KO">Korean</option>
+                                            <option value="LA">Latin</option>
+                                            
+                                            <option value="MI">Maori</option>
+                                            <option value="MR">Marathi</option>
+                                            <option value="MN">Mongolian</option>
+                                            <option value="NE">Nepali</option>
+                                            <option value="NO">Norwegian</option>
+                                            <option value="FA">Persian</option>
+                                            <option value="PL">Polish</option>
+                                            <option value="PT">Portuguese</option>
+                                            <option value="PA">Punjabi</option>
+                                            
+                                            
+                                            <option value="TR">Turkish</option>
+                                            <option value="UK">Ukrainian</option>
+                                            <option value="UR">Urdu</option>
+                                            <option value="UZ">Uzbek</option>
+                                            <option value="VI">Vietnamese</option>
+                                            <option value="CY">Welsh</option>
+                                            <option value="XH">Xhosa</option>
+                                            </select>
+                                        </div>
+                           </div>
+<hr>
+                            <div>
+                               <h6><b>Broadcast title (Optional)</b></h6> 
+                               <div class="col-4">
+                                        
+                                        <select id="inputtype" class="form-control" name="category">
+                                        <option value="all" selected disabled>Media...</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        </select>
+                                </div>
+                                <div class="row">
+                                    <div class="form-check col">
+                                        <input class="form-check-input" type="radio" name="same" id="">
+                                        <label class="form-check-label">
+                                            Image 
+                                        </label>
+                                    </div>
+                                    <div class="form-check col">
+                                        <input class="form-check-input" type="radio" name="same" id="" checked>
+                                        <label class="form-check-label">
+                                        Video
+                                        </label>
+                                    </div>
+                                    <div class="form-check col">
+                                        <input class="form-check-input" type="radio" name="same" id="" checked>
+                                        <label class="form-check-label">
+                                            Document
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+<hr>
+                            <h6><b>Body</b></h6> 
+                            
+                         <textarea id="" cols="55" rows="5" class="form-control mt-3" name="body" placeholder="Template Message........."></textarea>
+<hr>
+                            <h6><b>Footer </b>(Optional)</h6>
+                            <p>Footers are great to add any disclaimers or to add a thoughtful PS</p> 
+                            <input type="text" class="form-control mt-3" name="footer" placeholder="Enter Text">
+
+<hr>
+                            <h6><b>Buttons </b>(Optional)</h6>
+                            
+                            <select  name="button" id="inputtype" class="form-control col-4">
+                                        <option value="all" selected disabled>None</option>
+                                        <option value="Call to Action">Call to Action</option>
+                                        <option value="Quick Reply">Quick Reply</option>
+                                        
+                            </select>
+
+                                        <div class="row  mt-2">
+                            <select  name="button" id="inputtype" class="form-control col-4">
+                                        <option value="all" selected disabled>Visit Website</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                            </select>
+                                        <input type="text" placeholder="Confirm order" class="ms-2 col-4 form-control">
+                                        </div>
+
+                                        <div class="row  mt-2">
+                            <select  name="button" id="inputtype" class="form-control col-4">
+                                        <option value="all" selected disabled>Dynamic</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                            </select>
+                                        <input type="text" placeholder="jguyguy" class="ms-2 col-6 form-control">
+                                        </div>
+<hr>
+                                        <h6><b>Sample Content </b></h6>
+                            
+                          
+
+                                        
+                                        <input type="text" class="form-control col mb-2">
+                                        <input type="text" class="form-control col mb-2">
+                                        <input type="text" class="form-control col mb-2">
+                                        <input type="text" class="form-control col mb-2">
+                                        <input type="text" class="form-control col mb-2">
+                                        <input type="text" class="form-control col mb-2">
+                                    </div>
+                        <div class="modal-footer">
+                              
+                        </div>
+                        </div>
+                        </div>
+            </div>
+</form>
+
+
+        <!-- Modal -->
 
 </div>
 </div>
@@ -273,6 +462,8 @@
                         </div>
             </div>
 </form>
+
+
         <!-- Modal --> 
         @include('layouts.footer')
 </body>
