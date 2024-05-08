@@ -14,6 +14,8 @@ class SettingsController extends Controller
 
     public function profilepost(Request $request){
        $request->validate([
+
+           'image'=>'required',
            'number'=>'required',
            'about'=>'required',
            'address'=>'required',
@@ -23,6 +25,19 @@ class SettingsController extends Controller
            'web1'=>'required',
            'web2'=>'required',
        ]);
+
+       if($request->hasfile('image')) 
+       {
+        $file = $request -> file('image');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time().'.'.$extension;
+        $file ->move('uploads/image',  $filename);
+        $data1['profile'] = $filename;
+       }
+
+       else{
+             echo "image not uploaded";
+       }
 
        $data1['PhoneNumber'] = $request->number;
        $data1['About'] = $request->about;
@@ -45,12 +60,25 @@ class SettingsController extends Controller
 
     public function generalpost(Request $request){
         $request->validate([
+            'images'=> 'required',
            'time'=> 'required',
            'language'=> 'required',
            'button'=> 'required',
            'direction'=> 'required',
 
         ]);
+
+        if($request -> hasfile('images')){
+            $file = $request -> file('images');
+            $extension =  $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file ->move('uploads/image',  $filename);
+            $data1['Profile'] = $filename;
+        }
+
+        else{
+            echo "file not uploaded";
+        }
  
         $data1['timezone'] = $request->time;
         $data1['language'] = $request->language;
@@ -79,4 +107,6 @@ class SettingsController extends Controller
     public function manage(){
         return view('settings.managenotification');
     }
+
+   
 }

@@ -11,5 +11,5 @@ class BusinessProfile extends Model
 
     protected $table="settingsbusinessprofile";
 
-    protected $fillable= ['PhoneNumber','About','BusinessAddress','BusinessDescription','Email','BusinessIndustry','BusinessWebsite1','BusinessWebsite2'];
+    protected $fillable= ['profile','PhoneNumber','About','BusinessAddress','BusinessDescription','Email','BusinessIndustry','BusinessWebsite1','BusinessWebsite2'];
 }

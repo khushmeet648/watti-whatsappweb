@@ -16,9 +16,18 @@
         #border1
         {
             margin-top:30px;
-            
             border:2px dotted black;
         }
+        
+        #inputUpload {
+            display: none;
+        }
+
+        .custom-file-upload {
+            cursor: pointer;
+            color: #0c090d;
+        }
+
     </style>
 </head>
 @include('layouts.header')
@@ -56,7 +65,9 @@
                             <div>
                             <h6  class="text-secondary mt-4">Drag & Drop files here</h6>
                             <p>or</p>
-                            <a href="" class="btn btn-success">Browse files</a>
+
+                            <label for="inputUpload" class="custom-file-upload btn btn-success">Browse files</label>
+                            <input id="inputUpload" type="file" />
                             </div>
                     </div>
                 </div>

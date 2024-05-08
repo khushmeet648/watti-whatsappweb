@@ -118,13 +118,7 @@
   <!-- modal -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <img src="data:image/png;base64,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" 
-    alt="user" width="100" height="100">
-     
+        <img src="{{asset('dist/img/avatar.png')}}" alt="" width="100" height="100">
     <div class="row">
     <h5 class="col-12"><b>{{Session::get('name')}}</b></h5>
     <br>
@@ -153,7 +147,8 @@
       </div>
 
       <div class=" col-auto">
-        <a href="{{route('manage')}}">      <i class="fas fa-bell" aria-hidden="true"></i> Manage notifications </a> 
+        <a href="{{route('manage')}}"> 
+             <i class="fas fa-bell" aria-hidden="true"></i> Manage notifications </a> 
       </div>
 
     </div>

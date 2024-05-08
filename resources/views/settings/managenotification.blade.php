@@ -17,15 +17,15 @@
   <div class="container-fluid">
                 
   <div class="row ms-5">
-               <div class="col d-flex justify-content-end">
-               <label class="mt-5">Desktop notifications</label>
+               <div class="col-5 d-flex justify-content-end">
+               <label class="mt-5 me-3">Desktop notifications</label>
               
                <label class="mt-5" >Sound notifications</label>
                </div>
                 
     
                <div class="col d-flex justify-content-end">
-               <label class="mt-5">Desktop notifications</label>
+               <label class="mt-5 me-3">Desktop notifications</label>
                <label class="mt-5" >Sound notifications</label>
                </div>
   </div>
@@ -33,26 +33,30 @@
   <div class="row mt-4">
           <div class="col">
           <label>New Chat Notification</label>
-          <input type="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" class="ms-5">
+          <input type="checkbox" >
           <p>When a new chat is initiated</p>
 
           <label>New Message Notification</label>
-          <input type="checkbox">
+          <input type="checkbox" class="ms-5">
           <input type="checkbox">
           <p>When a new message is received</p>
 
           <label>New chat assigned Notification</label>
-           <input type="checkbox">
+           <input type="checkbox" class="ms-5">
           <input type="checkbox">
           <p>When a new chat is assigned to agent</p>
         </div>
 
         <div class="col">
           <label>New Message on assigned chat</label>
+          <input type="checkbox" class="ms-5">
+          <input type="checkbox">
           <p>When a new message is received on an assigned chat</p>
 
           <label>New Chat assigned to team</label>
+          <input type="checkbox" class="ms-5">
+          <input type="checkbox">
           <p>When a new chat is assigned to your team</p>
 
         </div>

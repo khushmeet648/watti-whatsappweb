@@ -11,5 +11,5 @@ class General extends Model
 
     protected $table= 'settingsgeneral';
 
-    protected $fillable= ['timezone','language','button','direction'];
+    protected $fillable= ['Profile','timezone','language','button','direction'];
 }
