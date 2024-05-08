@@ -55,11 +55,11 @@
                 </thead>
 
                 <tr>
-                        <td>Catalog_11</td>
-                        <td>50</td>
-                        <td>124</td>
-                        <td>50</td>
-                        <td>Created 15 days ago<br>Updated 15 days ago</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                         <a href="" class="btn btn-outline-secondary"><i class="fas fa-copy"></i></a>
                         <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>

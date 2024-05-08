@@ -39,9 +39,12 @@ class ChatbotsController extends Controller
       return view("chatbot.trigger.routing");
      }
 
-   public function sequence(){
-    return view("chatbot.trigger.sequence");
+   public function sequence()
+   {
+     $data = Sequence :: select('SequenceName')->get();
+     return view('chatbot.trigger.sequence',['message'=> $data]);
    }
+  
 
    public function sequencepost(Request $request){
     $request-> validate([
@@ -49,10 +52,22 @@ class ChatbotsController extends Controller
     ]);
 
     $data['SequenceName']= $request->name;
-
     $sequence = Sequence::create($data);
-     
     return redirect()->back()->with('success', "successfully inserted");
 
     }
+
+    public function destroys($Name){
+     $data = Sequence::where('SequenceName', $Name)->first();
+
+     if($data){
+         $data->delete();
+         return redirect()->back()->with('success', 'Sequence deleted successfully.');
+     } 
+     else {
+         return redirect()->back()->with('error', 'Sequence not found.');
+     }
+   
+ }
+ 
 }

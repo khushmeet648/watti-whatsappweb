@@ -30,9 +30,11 @@ Route::get('/inbox', [DashboardController::class,'index'])->name('inbox');
 Route::get('/history', [BroadcastController::class,'history'])->name('history');
 Route::get('/scheduledbroadcast', [BroadcastController::class,'schedule'])->name('scheduledbroadcast');
 Route::post('/scheduledbroadcast', [BroadcastController::class,'historypost'])->name('historypost');
+Route::get('deleted/{Name}', [BroadcastController::class,'deleted'])->name('deleted');
+
 Route::get('/templatemessages', [BroadcastController::class,'template'])->name('templatemessages');
 Route::post('/templatemessages', [BroadcastController::class,'templatepost'])->name('template.post');
-Route::get('delete/{Name}', [BroadcastController::class,'destroy'])->name('destroy');
+Route::get('destroy/{Name}', [BroadcastController::class,'destroy'])->name('destroy');
 
 // ChatBots
 Route::get('/chatbotflows', [ChatbotsController::class,'flows'])->name('chatbotflows');
@@ -44,6 +46,7 @@ Route::get('/replymaterial', [ChatbotsController::class,'replymaterial'])->name(
 Route::get('/routing', [ChatbotsController::class,'routing'])->name('routing');
 Route::get('/sequence', [ChatbotsController::class,'sequence'])->name('sequence');
 Route::post('/sequence', [ChatbotsController::class,'sequencepost'])->name('sequence.post');
+Route::get('delete/{Name}', [ChatbotsController::class,'destroys'])->name('destroys');
 
 
 

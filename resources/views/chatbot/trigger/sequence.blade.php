@@ -14,6 +14,7 @@
       alert(msg);
     }
   </script>
+  
  
 <body>
 <form action="{{route('sequence')}}">
@@ -52,23 +53,25 @@
                 <th>Edit/Delete</th>
             </tr>
         </thead>
-            <tr>
-                <td>Lead Follow Up Series</td>
-                <td>4</td>
-                <td>0</td>
+            @if(!empty($message))
+             @foreach($message as $mes)
+             <tr>
+                <td>{{$mes['SequenceName']}}</td>
+                <td>PENDING</td>
+                <td>PENDING</td>
                 <td>0%</td>
-                <td> <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a></td>
-            </tr>
-
-            <tr>
-                <td>Purchase Follow Ups</td>
-                <td>3</td>
-                <td>0</td>
-                <td>0%</td>
-                <td> <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a></td>
-            </tr>
+                <td>
+                <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
+                <a href="{{url('delete/'.$mes['SequenceName'])}}" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                </td>
+                
+               </tr>
+               @endforeach
+               @else
+                <tr class="d-flex justify-content-end">
+                    <td >no records found</td>
+                </tr>
+               @endif
     </table>
         </div>
        <!-- /.container-fluid -->

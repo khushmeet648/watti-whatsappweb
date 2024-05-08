@@ -32,7 +32,9 @@ class BroadcastController extends Controller
 
 
     public function schedule(){
-        return view("Broadcast.scheduledbroadcast");
+        $data2 = Broadcast:: select('Name','Date')->get();
+        return view("Broadcast.scheduledbroadcast",['messages'=> $data2]);
+
     }
 
     
@@ -74,16 +76,32 @@ class BroadcastController extends Controller
     
     }
 
-    public function destroy($Name){
-        $data = TemplateMessage::where('Name', $Name)->first();
-
+    public function destroy($name){
+        $data = TemplateMessage::where('Name', $name)->first();
+       
         if($data){
             $data->delete();
-            return redirect()->back()->with('success', 'Template deleted successfully.');
-        } else {
-            return redirect()->back()->with('error', 'Data not found.');
+            return redirect()->back()->with('status', 'Template deleted successfully.');
+        } 
+        else {
+            return redirect()->back()->with('error', 'Data not deleted.');
+          
         }
       
     }
-    
+
+    public function deleted($name1){
+        $data1 = Broadcast::where('Name', $name1)->first();
+   
+        if($data1){
+            $data1->delete();
+            return redirect()->back()->with('status', 'Broadcast deleted successfully.');
+        } 
+        else {
+            return redirect()->back()->with('error', 'Data not deleted.');
+        }
+      
+    }
+
+   
 }

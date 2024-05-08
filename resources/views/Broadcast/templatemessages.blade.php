@@ -27,12 +27,12 @@
     if(exist){
       alert(msg);
     }
-  </script>
+</script>
 @include('layouts.header')
 @include('layouts.broadcastsidebar')
 <body>
 
-<form >
+<form>
 <div class="wrapper">
 <div class="content-wrapper">
 <div class="content-header mt-3">   
@@ -95,7 +95,7 @@
                 <td>
                 <a href="" class="btn btn-outline-secondary"><i class="fas fa-copy"></i></a>
                 <a href="" data-toggle="modal"  data-target="#view" class="btn btn-outline-secondary"><i class="fas fa-eye"></i></a>
-                <a href="{{url('delete/'.$mes['Name'])}}" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                <a href="{{url('destroy/'.$mes['Name'])}}" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
                 </td>
                 
                </tr>
@@ -165,7 +165,7 @@
 <!-- Modal view -->
 <form>
    
-            <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> 
                         <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -408,7 +408,6 @@
                                             <option value="PL">Polish</option>
                                             <option value="PT">Portuguese</option>
                                             <option value="PA">Punjabi</option>
-                                            
                                             
                                             <option value="TR">Turkish</option>
                                             <option value="UK">Ukrainian</option>

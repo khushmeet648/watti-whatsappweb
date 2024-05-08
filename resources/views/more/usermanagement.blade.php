@@ -51,12 +51,21 @@
                         <tr>
                             <th>User</th>
                             <th>Online Status</th>
-                            <th>Email/Phone</th>
-                            <th>Role</th>
+                            <th>Email</th>
                             <th>Teams</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
+                    <tr class="ms-2">
+                        <td><i class="fa fa-user"></i> {{Session::get('name')}}</td>
+                        <td>??</td>
+                        <td>{{Session::get('email')}}</td>
+                        <td>All Teams</td>
+                        <td>
+                        <a href="" data-toggle="modal"  data-target="#" class="btn btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                        <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
                 </table>
             </div>
 
@@ -71,6 +80,15 @@
                             <th>Default Team <i class="fa fa-info-circle" aria-hidden="true"></i></th>
                             <th>Team Size</th>
                             <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                 <a href="" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
+                                 <a href="" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                            </td>
                         </tr>
                     </thead>
                 </table>

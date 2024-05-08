@@ -24,6 +24,23 @@
       alert(msg);
     }
   </script>
+
+<script>
+    var msg = '{{Session::get('status')}}';
+    var exist = '{{Session::has('status')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
+
+<script>
+    var msg = '{{Session::get('error')}}';
+    var exist = '{{Session::has('error')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
+  
 </head>
 @include('layouts.header')
 @include('layouts.broadcastsidebar')
@@ -58,6 +75,22 @@
                     <th>Scheduled</th>
                     <th>Action</th>
                 </tr>
+                @if(!empty($messages))
+                            @foreach($messages as $mes)
+                            <tr>
+                                    <td>{{$mes['Name']}}</td>
+                                    <td>{{$mes['Date']}}</td>
+                                    <td>
+                                    <a href="" data-toggle="modal"  data-target="#" class="btn btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                                    <a href="{{url('deleted/'.$mes['Name'])}}" class="btn btn-outline-secondary"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                                    </td>
+                            </tr>
+                            @endforeach
+                        @else
+                            <tr class="d-flex justify-content-end">
+                                <td >no records found</td>
+                            </tr>
+                        @endif
             </thead>
         </table>
     </div>

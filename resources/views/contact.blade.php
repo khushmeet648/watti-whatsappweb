@@ -70,7 +70,7 @@
 
             <tr>
                     <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                    <td>Khush meet<br>918572802763</td>
+                    <td>{{Session::get('name')}}</td>
                      <td></td>
                      <td>Apr-22-2024</td>
                      <td></td>
