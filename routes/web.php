@@ -25,6 +25,7 @@ Route::post('/register', [AuthController::class,'registerPost'])->name('register
 
 // Team Inbox
 Route::get('/inbox', [DashboardController::class,'index'])->name('inbox');
+Route::get('/inbox1', [DashboardController::class,'show'])->name('show');
 
 // Broadcast
 Route::get('/history', [BroadcastController::class,'history'])->name('history');
