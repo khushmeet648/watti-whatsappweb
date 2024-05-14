@@ -20,8 +20,8 @@ services:
   mysql:
     image: 'mysql:5.7'
     environment:
-      MYSQL_DATABASE: whatsapp
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: secret
     networks:
       - laravel
   redis:
