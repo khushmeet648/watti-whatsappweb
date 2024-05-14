@@ -37,7 +37,7 @@
                   <div class="card-body">
                       <label class="card-title">Scan the QR Code</label>
                       <p class="card-text">Use the phone camera to scan the below code. Tap on the link to open a pre-filled WhatsApp message. Hit "send" to kick start the trial.</p>
-                     <a href="{{route('show')}}">{!! QrCode::generate('Make me into a QrCode!') !!}</a>
+                      <div> <a href="{{route('show')}}">{!! QrCode::generate('Make me into a QrCode!') !!}</a></div>
                   </div>
                   </div>
           </div>

@@ -13,8 +13,6 @@ class DashboardController extends Controller
 
     public function show()
     {
-        return (
-            'Hello, World!'
-        );
+        return QrCode::generate('Hello, World!');
     }
 }
